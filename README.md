@@ -22,7 +22,9 @@ Part I: A simple Clock class
 Write a class called Clock that represents the time of day using the 24-hour clock. As well as a 
 suitable initializer method, the class Clock should contain methods:
  1. to_s: Return a string that represents the time, e.g., 5 seconds after midnight would be: 0:0:5
- 2. tick: Increment the time by one second
+ 2. tick: Increment the time by one second.
+ 
+ 
 Care must be taken to deal with minute, hour and 24-hour boundaries. Write a script that creates a 
 Clock object using data from a file called "clock.dat". Then print the Clock object, invoke tick 
 200,000 times on the Clock object, and print the Clock object again. The "clock.dat" file contains 3 
