@@ -22,8 +22,46 @@ class Clock
   end
 
   def to_s
-    "#{@hours}:#{@minutes}:#{@seconds}"
+    result = ''
+
+    #hours
+    if is_one_digit_number?(@hours)
+      #result = "0#{@hours}"
+      result << '0' + @hours.to_s
+    else
+      result << @hours.to_s
+    end
+    result << ':'
+
+    #minutes
+    if is_one_digit_number?(@minutes)
+      result << '0' + @minutes.to_s
+    else
+      result << @minutes.to_s
+    end
+    result << ':'
+
+    #seconds
+    if is_one_digit_number?(@seconds)
+      result << '0' + @seconds.to_s
+    else
+      result << @seconds.to_s
+    end
+
+    result
   end
 
+  def is_one_digit_number?(digit)
+    if (digit.to_i>=0 && digit.to_i<10)
+      true
+    else
+      false
+    end
+
+  end
 
 end
+
+
+
+
