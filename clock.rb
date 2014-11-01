@@ -62,6 +62,16 @@ class Clock
 
   end
 
+  def self.readTimeFromFile
+    arrTimeFromFile = Array.new
+    File.open('clock.dat', 'r') do |f|
+      f.each_line do |line|
+        arrTimeFromFile.push(line.to_i)
+      end
+    end
+    arrTimeFromFile
+  end
+
 end
 
 
