@@ -1,9 +1,9 @@
 class Clock
-  def initialize(h, m, s)
+  def initialize(arr_time)
     # Instance variables
-    @hours = h
-    @minutes = m
-    @seconds = s
+    @hours = arr_time[0]
+    @minutes = arr_time[1]
+    @seconds = arr_time[2]
   end
 
   def tick
@@ -22,6 +22,8 @@ class Clock
   end
 
   def to_s
+
+
     result = ''
 
     #hours
