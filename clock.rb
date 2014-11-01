@@ -11,7 +11,7 @@ class Clock
     if @seconds > 59
       @seconds = 0
       @minutes += 1
-      if @minutes >59
+      if @minutes > 59
         @minutes = 0
         @hours +=1
         if @hours > 23
@@ -62,6 +62,7 @@ class Clock
 
   end
 
+  #initialise static public method to read time from file
   def self.readTimeFromFile
     arrTimeFromFile = Array.new
     File.open('clock.dat', 'r') do |f|
