@@ -11,10 +11,20 @@ class AlarmClock < Clock
 
   def tick
     super
-
     #check if ALARM
-    if  @hours == @alarm_hours && @minutes == @alarm_minutes && @seconds == @alarm_seconds
-      puts "#{self}  Alarm!"
+    arrTime = [@hours, @minutes, @seconds]
+    arrAlarmTime = [@alarm_hours, @alarm_minutes, @alarm_seconds]
+
+    #?? can't understand why it's calling 3 times
+    if arrAlarmTime == arrTime
+      puts "Alarm! #{self}"
     end
+
+
+=begin
+    if  (@hours == @alarm_hours && @minutes == @alarm_minutes && @seconds == @alarm_seconds)
+      puts "Alarm!"
+    end
+=end
   end
 end
