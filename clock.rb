@@ -27,7 +27,7 @@ class Clock
     result = ''
 
     #hours
-    if is_one_digit_number?(@hours)
+    if Clock.is_one_digit_number?(@hours)
       #result = "0#{@hours}"
       result << '0' + @hours.to_s
     else
@@ -36,7 +36,7 @@ class Clock
     result << ':'
 
     #minutes
-    if is_one_digit_number?(@minutes)
+    if Clock.is_one_digit_number?(@minutes)
       result << '0' + @minutes.to_s
     else
       result << @minutes.to_s
@@ -44,7 +44,7 @@ class Clock
     result << ':'
 
     #seconds
-    if is_one_digit_number?(@seconds)
+    if Clock.is_one_digit_number?(@seconds)
       result << '0' + @seconds.to_s
     else
       result << @seconds.to_s

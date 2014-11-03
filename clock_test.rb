@@ -6,7 +6,7 @@ class Clock_test < Test::Unit::TestCase
   # Called before every test method runs. Can be used
   # to set up fixture information
   def setup
-    @clock = Clock.new(Clock.getTimeArrayFromFile)
+    @clock = Clock.new([0,0,0])
   end
 
   def test_initialize
@@ -20,15 +20,19 @@ class Clock_test < Test::Unit::TestCase
   end
 
   def test_to_s
-    assert_kind_of(String, @clock.to_s)
+    assert_kind_of(String, @clock.to_s, 'to_s mistake')
   end
 
   def test_is_one_digit_number?
-    assert_equal(Clock.is_one_digit_number?(1), true)
+    assert_equal(Clock.is_one_digit_number?(1), true, 'is_one_digit_number mistake')
   end
 
   def test_getTimeArrayFromFile
-    
+    assert_not_equal(0, Clock.getTimeArrayFromFile.size)
+  end
+
+  def test_getTimeArrayFromClock
+    assert_equal(3, @clock.getTimeArrayFromClock.size)
   end
 
 end

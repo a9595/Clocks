@@ -19,8 +19,6 @@ class AlarmClock < Clock
     if arrAlarmTime == arrTime
       puts "Alarm! #{self}"
     end
-
-
 =begin
     if  (@hours == @alarm_hours && @minutes == @alarm_minutes && @seconds == @alarm_seconds)
       puts "Alarm!"
