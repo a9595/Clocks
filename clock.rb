@@ -1,9 +1,11 @@
 class Clock
+  attr_reader :seconds, :hours, :minutes
+
   def initialize(arr_time)
-    # Instance variables
-    @hours = arr_time[0]
-    @minutes = arr_time[1]
-    @seconds = arr_time[2]
+    # Init and making a validation
+    @hours = arr_time[0] > 23 || arr_time[0] < 0 ? 0 : arr_time[0]
+    @minutes = arr_time[1] > 60 || arr_time[1] < 0 ? 0 : arr_time[1]
+    @seconds = arr_time[2] > 60 || arr_time[2] < 0 ? 0 : arr_time[2]
   end
 
   def tick
@@ -22,8 +24,6 @@ class Clock
   end
 
   def to_s
-
-
     result = ''
 
     #hours
@@ -53,7 +53,7 @@ class Clock
     result
   end
 
-  def is_one_digit_number?(digit)
+  def self.is_one_digit_number?(digit)
     if (digit.to_i>=0 && digit.to_i<10)
       true
     else
@@ -63,7 +63,7 @@ class Clock
   end
 
   #initialise static public method to read time from file
-  def self.readTimeFromFile
+  def self.getTimeArrayFromFile
     arrTimeFromFile = Array.new
     File.open('clock.dat', 'r') do |f|
       f.each_line do |line|
@@ -71,6 +71,11 @@ class Clock
       end
     end
     arrTimeFromFile
+  end
+
+  def getTimeArrayFromClock
+    arrTimeFromClock = [@hours, @minutes, @seconds]
+    arrTimeFromClock
   end
 
 end

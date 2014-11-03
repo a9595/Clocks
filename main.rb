@@ -5,9 +5,9 @@ require_relative 'reverse_clock'
 class Main
 
   #init
-  clock = Clock.new(Clock.readTimeFromFile)
-  alarm = AlarmClock.new(Clock.readTimeFromFile)
-  reversed = ReverseClock.new(Clock.readTimeFromFile)
+  clock = Clock.new(Clock.getTimeArrayFromFile)
+  alarm = AlarmClock.new(Clock.getTimeArrayFromFile)
+  reversed = ReverseClock.new(Clock.getTimeArrayFromFile)
 
   #print #1
   puts ("Clock: #{clock} \nAlarm: #{alarm} \nReversed: #{reversed} ")
@@ -21,6 +21,7 @@ class Main
 
   #print #2
   puts ("Clock: #{clock} \nAlarm: #{alarm} \nReversed: #{reversed}")
+
 
 
 
